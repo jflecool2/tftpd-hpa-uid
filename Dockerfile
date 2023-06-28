@@ -13,6 +13,4 @@ RUN apt-get update -qq \
     && groupadd -g $GID customgroup \
     && useradd -r -u $UID -g customgroup customuser
 
-USER customuser
-
 CMD ["in.tftpd", "--user", "customuser", "--ipv4", "--foreground", "--listen", "--address", "0.0.0.0:69", "--create", "--secure", "-vvv", "/data"]
